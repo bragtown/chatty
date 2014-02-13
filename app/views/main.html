@@ -8,6 +8,6 @@
 		<p ng-repeat="m in messages">{{m.message}}</p>
 	</div>
 	<form ng-submit = "addMessage()">
-		<input ng-model="newMessage"/>
+		<input ng-model="newMessageText" type="text" ng-enter="addmessage()"/>
 	</form>
 </div>

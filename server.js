@@ -7,6 +7,16 @@ var onRequest = function(req, res){
 		'Content-type':'application/JSON',
 		'Access-Control-Allow-Origin':'*'
 	});
+	if (req.method === 'OPTIONS') {
+    	res.writeHead(200, {
+	        'Connection': 'close',
+	        'Content-Type': 'application/json',
+	        'Access-Control-Allow-Origin': '*',
+	        'Access-Control-Allow-Methods': 'OPTIONS, GET, POST',
+	        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+  		});
+    	res.end("{}");
+  	}
 	if (req.method === 'POST'){
 		var postData = '';
 		req.on('data', function(chunk){
